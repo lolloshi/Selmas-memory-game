@@ -23,13 +23,14 @@ function flipCard(card) {
         card.classList.add('flipped');
         flippedCards.push(card);
 
-        playAudio(clickSound);
+        clickSound.play(); // Replace playAudio(clickSound); with this line
 
         if (flippedCards.length === 2) {
             checkMatch();
         }
     }
 }
+
 
 
 const highscoreList = document.getElementById("highscore-list");
