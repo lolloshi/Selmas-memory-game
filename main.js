@@ -46,10 +46,10 @@ function createCard(img) {
     cardInner.classList.add('card-inner');
 
     let cardFront = document.createElement('div');
-    cardFront.classList.add('card-back');
+    cardFront.classList.add('card-front');
 
     let cardBack = document.createElement('div');
-    cardBack.classList.add('card-front');
+    cardBack.classList.add('card-back');
     cardBack.style.backgroundImage = `url(${img})`;
 
     cardInner.appendChild(cardFront);
@@ -62,6 +62,7 @@ function createCard(img) {
 
     return card;
 }
+
 
 
 function checkMatch() {
