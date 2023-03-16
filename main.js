@@ -67,14 +67,16 @@ function createCard(img) {
 function checkMatch() {
     const [card1, card2] = flippedCards;
 
-    if (card1.querySelector('.card-back').style.backgroundImage ===
-        card2.querySelector('.card-back').style.backgroundImage) {
+    if (card1.querySelector('.card-front').style.backgroundImage ===
+        card2.querySelector('.card-front').style.backgroundImage) {
         matchedCards.push(card1, card2);
         matchSound.play();
         score += 2;
     } else {
-        card1.classList.remove('flipped');
-        card2.classList.remove('flipped');
+        setTimeout(() => {
+            card1.classList.remove('flipped');
+            card2.classList.remove('flipped');
+        }, 1000);
         if (!firstClick) {
             score -= 1;
         }
@@ -89,6 +91,7 @@ function checkMatch() {
         displayHighScores();
     }
 }
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
