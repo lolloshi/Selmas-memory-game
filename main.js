@@ -46,19 +46,23 @@ function createCard(img) {
     cardInner.classList.add('card-inner');
 
     let cardFront = document.createElement('div');
-    cardFront.classList.add('card-front');
+    cardFront.classList.add('card-back');
 
     let cardBack = document.createElement('div');
-    cardBack.classList.add('card-back');
+    cardBack.classList.add('card-front');
     cardBack.style.backgroundImage = `url(${img})`;
 
     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
     card.appendChild(cardInner);
 
- card.addEventListener('click', () => {
-    flipCard(card);
-});
+    card.addEventListener('click', () => {
+        flipCard(card);
+    });
+
+    return card;
+}
+
 
 
     return card;
