@@ -18,6 +18,20 @@ let matchedCards = [];
 let score = 0;
 let firstClick = true;
 
+function flipCard(card) {
+    if (!card.classList.contains('flipped') && flippedCards.length < 2) {
+        card.classList.add('flipped');
+        flippedCards.push(card);
+
+        playAudio(clickSound);
+
+        if (flippedCards.length === 2) {
+            checkMatch();
+        }
+    }
+}
+
+
 const highscoreList = document.getElementById("highscore-list");
 const timeElement = document.getElementById("time");
 let timer;
@@ -41,17 +55,10 @@ function createCard(img) {
     cardInner.appendChild(cardBack);
     card.appendChild(cardInner);
 
-    card.addEventListener('click', () => {
-        if (!card.classList.contains('flipped') && flippedCards.length < 2) {
-            card.classList.add('flipped');
-            flippedCards.push(card);
-            clickSound.play();
+ card.addEventListener('click', () => {
+    flipCard(card);
+});
 
-            if (flippedCards.length === 2) {
-                setTimeout(checkMatch, 1000);
-            }
-        }
-    });
 
     return card;
 }
