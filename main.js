@@ -64,10 +64,6 @@ function createCard(img) {
 }
 
 
-
-    return card;
-}
-
 function checkMatch() {
     const [card1, card2] = flippedCards;
 
