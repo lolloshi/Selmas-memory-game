@@ -5,8 +5,8 @@ const cardImages = [
     'image6.jpg', 'image7.jpg', 'image8.jpg'
 ];
 
-const flipSound = new Audio('https://github.com/yourusername/yourrepo/raw/main/flipSound.mp3');
-const matchSound = new Audio('https://github.com/yourusername/yourrepo/raw/main/matchSound.mp3');
+const flipSound = new Audio('https://github.com/lolloshi/Selmas-memory-game/blob/main/click.mp3');
+const matchSound = new Audio('https://github.com/lolloshi/Selmas-memory-game/blob/main/match.mp3');
 
 const cards = [];
 let firstCard = null;
